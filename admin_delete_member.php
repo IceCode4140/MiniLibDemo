@@ -48,7 +48,7 @@
 <table class="content-table" style="margin-left:auto;margin-right:auto;padding:2px;border-spacing:20px;">
     <thead>
         <tr>
-            <th>Member ID</th>
+            <th>ID</th>
             <th>Name</th>
             <th>Username</th>
             <th>Gender</th>

@@ -3,7 +3,7 @@
     header("content-type:text/html;charset=UTF-8");
     require_once("connect.php");
     //check if login 
-    require_once("memberlogin_check.php");
+    require_once("adminlogin_check.php");
 ?> 
 <html>				
 <head>							
@@ -28,7 +28,7 @@
 
         .content-table th,
         .content-table td {
-            padding: 12px 15px;
+            padding: 10px 10px;
         }
 
         .content-table tbody tr {
@@ -46,7 +46,7 @@
     <table class="content-table" style="margin-left:auto;margin-right:auto;padding:2px;border-spacing:20px;">
         <thead>
             <tr>
-                <th>Member ID</th>
+                <th>ID</th>
                 <th>User Name</th>
                 <th>Book ID</th>
                 <th>Title</th>
