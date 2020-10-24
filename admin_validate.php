@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html>
-<body>
 <?php
     session_start();
     header("content-type:text/html;charset=UTF-8");
@@ -24,7 +21,7 @@
             header("Location: admin_center.php");
         }
         else 
-        { 
+        {
             header("Location: admin_index.php?msg=failed"); 
         } 
     }
