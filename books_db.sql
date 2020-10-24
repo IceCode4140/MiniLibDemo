@@ -45,39 +45,30 @@ INSERT INTO `books` (`title`, `author`,`category`, `Register_ID`)  VALUES
 --
 
 
-CREATE TABLE members (
-   Member_ID  int(20) NOT NULL auto_increment,
-   name  char(20) COLLATE utf8_unicode_ci NOT NULL,
-   username char(20) COLLATE utf8_unicode_ci NOT NULL,
-   password varchar(255) COLLATE utf8_unicode_ci NOT NULL, 
-   gender char(1) COLLATE utf8_unicode_ci  NOT NULL,
-   birthday DATE NOT NULL,
-   email varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+CREATE TABLE `members` (
+   `Member_ID`  int(20) NOT NULL auto_increment,
+   `name`  char(20) COLLATE utf8_unicode_ci NOT NULL,
+   `username` char(20) COLLATE utf8_unicode_ci NOT NULL,
+   `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL, 
+   `gender` char(1) COLLATE utf8_unicode_ci  NOT NULL,
+   `birthday` DATE NOT NULL,
+   `email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
    PRIMARY KEY(Member_ID),
    UNIQUE(username)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
 INSERT INTO members ( name, username, password, gender, birthday, email) VALUES 
-('Sam', 'member1', 'member1', 'F', '2000-01-01', 'sam@gmail.com'),
-('Kevin', 'member2', 'member2', 'M', '2000-01-02', 'kevin@gmail.com'),
-('Winnie', 'member3', 'member3', 'M', '2000-01-03', 'winnie@gmail.com'),
-('Mark',  'member4', 'member4', 'F', '2000-01-04', 'mark@gmail.com'),
-('Suzuki',  'member5', 'member5', 'F', '2000-01-05', 'suzuki@gmail.com'),
-('Akko', 'member6', 'member6', 'F', '2000-01-06', 'akko@gmail.com'),
-('Gary', 'member7', 'member7', 'M', '2000-01-07', 'gary@gmail.com'),
-('Bob', 'member8', 'member8', 'M', '2000-01-08', 'bob@gmail.com'),
-('Cristina',  'member9', 'member9', 'F', '2000-01-09', 'cristina@gmail.com'),
-('Lily',  'member10', 'member10', 'F', '2000-01-10', 'lily@gmail.com');
+('Sam', 'member1', 'member1', 'F', '2000-01-01', 'sam@gmail.com');
 
 --
 -- data structure `admin`
 --
 
-CREATE TABLE  admin (
-  Register_ID int(11) NOT NULL auto_increment,
-  admin_username char(20) COLLATE utf8_unicode_ci NOT NULL,
-  admin_password char(20) COLLATE utf8_unicode_ci NOT NULL,
+CREATE TABLE  `admin` (
+  `Register_ID` int(11) NOT NULL auto_increment,
+  `admin_username` char(20) COLLATE utf8_unicode_ci NOT NULL,
+  `admin_password` char(20) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY(Register_ID)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -85,8 +76,8 @@ CREATE TABLE  admin (
 -- insert into `admin`
 --
 
-INSERT INTO  admin (admin_username, admin_password) VALUES
-('admin', 'password');
+INSERT INTO  `admin` (`admin_username`, `admin_password`) VALUES
+('admin', 'miaomiao');
 
 
 --
@@ -98,7 +89,7 @@ CREATE TABLE `records` (
   `Book_ID`   int(11) NOT NULL,
   `borrowDate`   date NOT NULL,
   `expireDate`   date NOT NULL,
-  PRIMARY KEY (Member_ID, Book_ID),
+  PRIMARY KEY (`Member_ID`, `Book_ID`),
   KEY `Book_ID` (Book_ID),
   CONSTRAINT `records_ibfk_1` FOREIGN KEY (`Book_ID`) REFERENCES `books` (`Book_ID`) ON DELETE CASCADE,
   CONSTRAINT `records_ibfk_2` FOREIGN KEY (`Member_ID`) REFERENCES `members` (`Member_ID`) ON DELETE CASCADE ON UPDATE CASCADE
