@@ -1,9 +1,3 @@
-<html>				
-<head>							
-    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">	
-    <title>Add Member Register Form</title>
-</head>
-<body>
 <?php
     session_start();
     require_once("connect.php");
@@ -50,10 +44,8 @@
 ?>
 <script language="javascript">          
     window.location.href="member_record.php";
- </script>
-</body>
-</html>
- 
+</script>
+
       
     
 

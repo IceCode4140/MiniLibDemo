@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html>				
-<head>							
-    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">	
-    <title>Member Change Password</title>
-</head>
-<body>
 <?php  
     session_start();
-    header("content-type:text/html;charset=UTF-8");
     require_once("connect.php");
     require_once("memberlogin_check.php");
 
@@ -29,5 +21,3 @@
         header("location:member_change_password_form.php"); 
     }
 ?>
-</body>
-</html>
