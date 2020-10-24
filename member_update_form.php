@@ -6,8 +6,10 @@
    // confirm if login before
     require_once("memberlogin_check.php");
     $username = $_SESSION['username'];
+    
+    
     $sql = "SELECT * ,Year(birthday) as year , Month(birthday) as month, 
-            Day(birthday) as day FROM members WHERE username = '$username'";
+            Day(birthday) as day FROM members WHERE username = '$username'"; 
 
     $result = mysqli_query($db,$sql) or die (mysqli_error($db));
     $row = mysqli_fetch_assoc($result);
@@ -171,18 +173,18 @@
                         </select>Year   
                         <select name="month">
                             <option>- Month -</option>
-                            <option <?php if($row["month"]="1") echo "selected";?>>1</option>
-                            <option <?php if($row["month"]="2") echo "selected";?>>2</option>
-                            <option <?php if($row["month"]="3") echo "selected";?>>3</option>
-                            <option <?php if($row["month"]="4") echo "selected";?>>4</option>
-                            <option <?php if($row["month"]="5") echo "selected";?>>5</option>
-                            <option <?php if($row["month"]="6") echo "selected";?>>6</option>
-                            <option <?php if($row["month"]="7") echo "selected";?>>7</option>
-                            <option <?php if($row["month"]="8") echo "selected";?>>8</option>
-                            <option <?php if($row["month"]="9") echo "selected";?>>9</option>
-                            <option <?php if($row["month"]="10") echo "selected";?>>10</option>
-                            <option <?php if($row["month"]="11") echo "selected";?>>11</option>
-                            <option <?php if($row["month"]="12") echo "selected";?>>12</option>
+                            <option <?php if($row["month"]=="1") echo "selected";?>>1</option>
+                            <option <?php if($row["month"]=="2") echo "selected";?>>2</option>
+                            <option <?php if($row["month"]=="3") echo "selected";?>>3</option>
+                            <option <?php if($row["month"]=="4") echo "selected";?>>4</option>
+                            <option <?php if($row["month"]=="5") echo "selected";?>>5</option>
+                            <option <?php if($row["month"]=="6") echo "selected";?>>6</option>
+                            <option <?php if($row["month"]=="7") echo "selected";?>>7</option>
+                            <option <?php if($row["month"]=="8") echo "selected";?>>8</option>
+                            <option <?php if($row["month"]=="9") echo "selected";?>>9</option>
+                            <option <?php if($row["month"]=="10") echo "selected";?>>10</option>
+                            <option <?php if($row["month"]=="11") echo "selected";?>>11</option>
+                            <option <?php if($row["month"]=="12") echo "selected";?>>12</option>
                         </select>Month
                         <select name="day">
                         <option>- Day -</option>
