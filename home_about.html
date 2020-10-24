@@ -1,0 +1,111 @@
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Library Introduction</title>
+<style>
+
+    @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+    * {
+        box-sizing:border-box;
+        margin:0;	
+        font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+        height:100%;
+    }
+
+    img {
+        max-width:100%;
+    }
+
+    .slide {
+        background-image:url(./images/slide1.jpeg);
+        height:100vh;
+        background-position: center;
+        background-repeat:no-repeat;
+        background-size:cover; 	
+        -webkit-background-size:cover;
+        -moz-background-size:cover;
+        -o-background-size:cover;   
+    }
+
+    h3 {
+        display: inline-block;
+        font-size:20px;
+        color:#000000;
+        opacity: 0;    
+        margin-top: 100px;
+        margin-left:80px;
+    }
+
+    #fadeText {	
+        margin-top: 20px;	
+        margin-left:80px;	
+        color:#000000;	
+        opacity: 0;	
+        line-height: 1.5;
+    }
+
+    .btn {
+        background:#333;
+        color:#fff;
+        text-decoration:none;
+        padding:0.5rem 0.5rem;
+        border:0;
+        font-size:13px;
+    }
+
+
+</style>
+<script>
+
+    window.onload = function() {
+    let opacity = 0;
+    let fadeHeader = document.getElementById("fadeHeader");
+    let fadeText = document.getElementById("fadeText");	
+
+    let fade_targets = [fadeHeader,fadeText];
+    let startFade = setInterval(function(){move(fade_targets, 0)},50);
+
+        function move(target, index)
+        {
+            if( opacity < 1)
+            {
+                opacity = opacity + 0.03;
+                target[index].style.opacity = Math.pow(opacity, 2.2);
+            }
+            else
+            {
+                clearInterval(startFade);
+                ++index;
+                if (index < target.length)
+                {
+                    opacity = 0;
+                    startFade = setInterval(function(){move(target, index)},50);
+                }
+            }
+        };
+    }
+
+</script>
+</head>
+<body>
+    <div class="slide slide1">
+        <h3 id="fadeHeader">Introduction</h3>
+        <div id="fadeText">
+            Project Name : Online library Management System<br>
+            Language Used : PHP <br>
+            Database : MySQL <br>
+            User Interface Design : HTML , CSS , JAVASCRIPT <br>
+            Web Browser : Mozilla , Google Chrome <br>
+            Software : LAMP <br>
+            Project Management : Git-cola<br><br>
+            <a href="home_index.html" class="btn">Back to Library</a>
+        </div>
+    </div>
+</body>
+</html>
