@@ -1,8 +1,6 @@
-<?php 
+<?php
     session_start();
-    header("content-type:text/html;charset=UTF-8");
     require_once("connect.php");
-    //check if login 
     require_once("adminlogin_check.php");
 ?> 
 <html>				

@@ -51,7 +51,7 @@
     nav ul li a {
         color: #f2f2f2;
         text-decoration: none;
-        font-size: 18px;
+        font-size: 14px;
         font-weight: 500;
         padding: 8px 15px;
         border-radius: 5px;
